@@ -1,0 +1,44 @@
+{
+    "dataset_path": "C:\\Users\\NXTWAVE\\Downloads\\Global Energy Recovery\\Food_Delivery_Time_Prediction.csv",
+    "output_directory": "C:\\Users\\NXTWAVE\\Downloads\\Global Energy Recovery",
+    "total_records": 200,
+    "total_features": 18,
+    "low_threshold": 0.0,
+    "high_threshold": 0.0,
+    "best_model": "Multinomial Naive Bayes",
+    "best_model_f1_score": 1.0,
+    "knn_best_params": {
+        "metric": "euclidean",
+        "n_neighbors": 3,
+        "weights": "uniform"
+    },
+    "decision_tree_best_params": {
+        "criterion": "gini",
+        "max_depth": 2,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+    },
+    "model_results": [
+        {
+            "Model": "Multinomial Naive Bayes",
+            "Accuracy": 1.0,
+            "Precision": 1.0,
+            "Recall": 1.0,
+            "F1_Score": 1.0
+        },
+        {
+            "Model": "KNN",
+            "Accuracy": 1.0,
+            "Precision": 1.0,
+            "Recall": 1.0,
+            "F1_Score": 1.0
+        },
+        {
+            "Model": "Decision Tree",
+            "Accuracy": 1.0,
+            "Precision": 1.0,
+            "Recall": 1.0,
+            "F1_Score": 1.0
+        }
+    ]
+}
