@@ -1,15 +1,15 @@
 {
-    "dataset_path": "C:\\Users\\NXTWAVE\\Downloads\\Global Energy Recovery\\Food_Delivery_Time_Prediction.csv",
+    "dataset_path": "C:\\Users\\NXTWAVE\\Downloads\\Global Energy Recovery\\Global_Pollution_Analysis.csv",
     "output_directory": "C:\\Users\\NXTWAVE\\Downloads\\Global Energy Recovery",
     "total_records": 200,
-    "total_features": 18,
-    "low_threshold": 0.0,
-    "high_threshold": 0.0,
-    "best_model": "Multinomial Naive Bayes",
-    "best_model_f1_score": 1.0,
+    "total_features": 16,
+    "low_threshold": 9808.5091,
+    "high_threshold": 15559.571233333332,
+    "best_model": "Decision Tree",
+    "best_model_f1_score": 0.95,
     "knn_best_params": {
-        "metric": "euclidean",
-        "n_neighbors": 3,
+        "metric": "manhattan",
+        "n_neighbors": 11,
         "weights": "uniform"
     },
     "decision_tree_best_params": {
@@ -18,27 +18,35 @@
         "min_samples_leaf": 1,
         "min_samples_split": 2
     },
+    "pollution_columns_used": [
+        "Air_Pollution_Index",
+        "Water_Pollution_Index",
+        "Soil_Pollution_Index",
+        "Industrial_Waste (in tons)",
+        "CO2_Emissions (in MT)",
+        "Plastic_Waste_Produced (in tons)"
+    ],
     "model_results": [
         {
             "Model": "Multinomial Naive Bayes",
-            "Accuracy": 1.0,
-            "Precision": 1.0,
-            "Recall": 1.0,
-            "F1_Score": 1.0
+            "Accuracy": 0.725,
+            "Precision": 0.7128571428571429,
+            "Recall": 0.725,
+            "F1_Score": 0.7143800322061191
         },
         {
             "Model": "KNN",
-            "Accuracy": 1.0,
-            "Precision": 1.0,
-            "Recall": 1.0,
-            "F1_Score": 1.0
+            "Accuracy": 0.675,
+            "Precision": 0.711111111111111,
+            "Recall": 0.675,
+            "F1_Score": 0.6783118279569893
         },
         {
             "Model": "Decision Tree",
-            "Accuracy": 1.0,
-            "Precision": 1.0,
-            "Recall": 1.0,
-            "F1_Score": 1.0
+            "Accuracy": 0.95,
+            "Precision": 0.9517857142857142,
+            "Recall": 0.95,
+            "F1_Score": 0.95
         }
     ]
 }

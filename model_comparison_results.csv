@@ -1,4 +1,4 @@
 Model,Accuracy,Precision,Recall,F1_Score
-Multinomial Naive Bayes,1.0,1.0,1.0,1.0
-KNN,1.0,1.0,1.0,1.0
-Decision Tree,1.0,1.0,1.0,1.0
+Multinomial Naive Bayes,0.725,0.7128571428571429,0.725,0.7143800322061191
+KNN,0.675,0.711111111111111,0.675,0.6783118279569893
+Decision Tree,0.95,0.9517857142857142,0.95,0.95

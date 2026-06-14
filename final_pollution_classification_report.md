@@ -15,15 +15,49 @@ The classification is based on pollution levels, energy consumption, industrial 
 
 Input Dataset:
 
-C:\Users\NXTWAVE\Downloads\Global Energy Recovery\Food_Delivery_Time_Prediction.csv
+C:\Users\NXTWAVE\Downloads\Global Energy Recovery\Global_Pollution_Analysis.csv
 
-Total Records:
+Output Directory:
+
+C:\Users\NXTWAVE\Downloads\Global Energy Recovery
+
+Total Records After Cleaning:
 
 200
 
 Total Features Used:
 
-18
+16
+
+## Data Preprocessing
+
+The dataset was cleaned using the following steps:
+
+- Duplicate records were removed.
+- Missing numerical values were handled using median imputation.
+- Missing categorical values were handled using most frequent value imputation.
+- Outliers were handled using the IQR capping method.
+- Categorical features such as country and year were encoded using LabelEncoder.
+- Numerical features were scaled using StandardScaler.
+- MinMaxScaler was used separately for Multinomial Naive Bayes because it requires non-negative input values.
+
+## Feature Engineering
+
+The following engineered features were created:
+
+### Energy Consumption Per Capita
+
+This feature was created to understand energy usage relative to population.
+
+### Overall Pollution Index
+
+This feature was created by combining pollution-related indicators such as:
+
+['Air_Pollution_Index', 'Water_Pollution_Index', 'Soil_Pollution_Index', 'Industrial_Waste (in tons)', 'CO2_Emissions (in MT)', 'Plastic_Waste_Produced (in tons)']
+
+### Yearly Pollution Trend
+
+This feature was created to observe yearly changes in pollution levels.
 
 ## Target Variable
 
@@ -31,12 +65,18 @@ The target variable `Pollution_Severity` was created using the `Overall_Pollutio
 
 Thresholds used:
 
-- Low Pollution Threshold: 0.0
-- High Pollution Threshold: 0.0
+- Low Pollution Threshold: 9808.5091
+- High Pollution Threshold: 15559.571233333332
+
+Classification rule:
+
+- Low: pollution index less than or equal to low threshold
+- Medium: pollution index between low and high threshold
+- High: pollution index greater than high threshold
 
 ## Models Used
 
-Three classification algorithms were used:
+Three classification algorithms were trained and evaluated:
 
 1. Multinomial Naive Bayes
 2. K-Nearest Neighbors
@@ -45,43 +85,52 @@ Three classification algorithms were used:
 ## Model Performance
 
                   Model  Accuracy  Precision  Recall  F1_Score
-Multinomial Naive Bayes       1.0        1.0     1.0       1.0
-                    KNN       1.0        1.0     1.0       1.0
-          Decision Tree       1.0        1.0     1.0       1.0
+Multinomial Naive Bayes     0.725   0.712857   0.725  0.714380
+                    KNN     0.675   0.711111   0.675  0.678312
+          Decision Tree     0.950   0.951786   0.950  0.950000
 
 ## Best Model
 
 The best model based on weighted F1-score is:
 
-Multinomial Naive Bayes
+Decision Tree
+
+## KNN Best Parameters
+
+{'metric': 'manhattan', 'n_neighbors': 11, 'weights': 'uniform'}
+
+## Decision Tree Best Parameters
+
+{'criterion': 'gini', 'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 2}
 
 ## Key Insights
 
-### Pollution Classification
+### Pollution Severity
 
 Countries or records with higher pollution index values were classified as High severity, while lower values were classified as Low severity.
 
-### Energy Consumption Per Capita
+### Energy Consumption
 
-Energy consumption per capita was engineered to understand how energy usage relates to pollution severity.
+Energy consumption per capita helps understand how energy use may be connected with pollution severity.
 
-### Yearly Pollution Trend
+### Pollution Trend
 
-Yearly pollution trend was created to observe whether pollution indicators are increasing or decreasing over time.
+Yearly pollution trend helps identify whether environmental conditions are improving or worsening over time.
 
-### Decision Tree Insights
+### Decision Tree Interpretability
 
-The Decision Tree model provides feature importance, helping identify which environmental factors contribute most to pollution severity.
+Decision Tree provides feature importance, making it useful for understanding which environmental factors contribute most to pollution severity.
 
 ## Policy Recommendations
 
-1. Countries with High pollution severity should focus on stricter emission control policies.
-2. Industrial waste management systems should be improved.
+1. High pollution severity countries should adopt stricter emission control policies.
+2. Industrial waste treatment should be strengthened.
 3. Renewable energy adoption should be encouraged.
-4. Energy recovery systems should be promoted to reduce waste and improve sustainability.
-5. Countries with rising yearly pollution trends should be monitored continuously.
-6. Public transportation and clean fuel policies can help reduce CO2 emissions.
-7. Pollution monitoring dashboards should be implemented for real-time environmental tracking.
+4. Energy recovery systems should be implemented to convert waste into usable energy.
+5. Countries with rising yearly pollution trends should be monitored closely.
+6. Air, water, and soil pollution indices should be tracked regularly.
+7. Public transport and clean fuel policies should be promoted.
+8. Pollution dashboards should be used for real-time decision-making.
 
 ## Generated Files
 
@@ -106,6 +155,6 @@ The Decision Tree model provides feature importance, helping identify which envi
 
 ## Final Recommendation
 
-The recommended model is Multinomial Naive Bayes, as it achieved the best weighted F1-score.
+The recommended model is Decision Tree, as it achieved the best weighted F1-score.
 
-If interpretability is important, the Decision Tree classifier is preferred because it shows which features are most responsible for pollution severity classification.
+If interpretability is the priority, the Decision Tree classifier is preferred because it explains which features are responsible for pollution severity classification.

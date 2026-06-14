@@ -1,19 +1,17 @@
 Feature,Importance
-Order_ID,0.0
-Customer_Location,0.0
-Restaurant_Location,0.0
-Distance,0.0
-Weather_Conditions,0.0
-Traffic_Conditions,0.0
-Delivery_Person_Experience,0.0
-Order_Priority,0.0
-Order_Time,0.0
-Vehicle_Type,0.0
-Restaurant_Rating,0.0
-Customer_Rating,0.0
-Delivery_Time,0.0
-Order_Cost,0.0
-Tip_Amount,0.0
+Overall_Pollution_Index,1.0
+Country,0.0
+Air_Pollution_Index,0.0
+Year,0.0
+Soil_Pollution_Index,0.0
+Industrial_Waste (in tons),0.0
+Energy_Recovered (in GWh),0.0
+Water_Pollution_Index,0.0
+CO2_Emissions (in MT),0.0
+Renewable_Energy (%),0.0
+Energy_Consumption_Per_Capita (in MWh),0.0
+Plastic_Waste_Produced (in tons),0.0
+Population (in millions),0.0
+GDP_Per_Capita (in USD),0.0
 Energy_Consumption_Per_Capita,0.0
 Yearly_Pollution_Trend,0.0
-Overall_Pollution_Index,0.0
